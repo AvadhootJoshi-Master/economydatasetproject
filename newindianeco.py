@@ -57,12 +57,12 @@ st.markdown(
 # -----------------------------
 # Load model and dataset
 # -----------------------------
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model():
     return joblib.load(MODEL_PATH)
 
 
-@st.cache
+@st.cache_data
 def load_dataset():
     csv_files = list(BASE_DIR.glob("*.csv"))
 
